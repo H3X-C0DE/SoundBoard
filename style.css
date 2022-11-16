@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #302f31;
+}
+
+.board {
+  display: grid;
+  grid-template-rows: 175px 175px 175px;
+  grid-template-columns: 175px 175px 175px;
+}
+.box {
+  background-color: #c88df2;
+  border: 1px solid #2b2b2b;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 2em;
+  margin: 5px;
+}
