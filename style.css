@@ -20,3 +20,22 @@ body {
   font-size: 2em;
   margin: 5px;
 }
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #2b2b2b;
+}
+.soundBoard {
+  display: grid;
+  grid-template-rows: 175px 175px 175px;
+  grid-template-columns: 175px 175px 175px;
+}
+
+button {
+  background-color: #c88df2;
+  border: 2px solid #2b2b2b;
+  border-radius: 5px;
+}
