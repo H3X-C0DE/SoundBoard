@@ -1,5 +1,6 @@
 // selecting the main content div holding the buttons
 const appElement = document.getElementById("app");
+
 // array of file names
 const sounds = [
   "brain-fart.mp3",
@@ -11,6 +12,15 @@ const sounds = [
   "emotional-damage.mp3",
   "vine-boom.mp3",
   "erro.mp3",
+  "satan-sid.mp3",
+  "jesus.mp3",
+  "tuturu_1.mp3",
+  "pew.mp3",
+  "fuckoff.mp3",
+  "surprise-motherfucka.mp3",
+  "poi.mp3",
+  "niconico.mp3",
+  "sheep.mp3",
 ];
 // setting the sounds index to a key value
 const keyBindings = {
@@ -24,6 +34,14 @@ const keyBindings = {
   a: sounds[7],
   s: sounds[8],
   d: sounds[9],
+  f: sounds[10],
+  g: sounds[11],
+  h: sounds[12],
+  z: sounds[13],
+  x: sounds[14],
+  c: sounds[15],
+  v: sounds[16],
+  b: sounds[17],
 };
 // loop through sound files and reduce them to an array of elements:
 let soundElements = sounds.reduce((accumulator, sound) => {
@@ -35,13 +53,11 @@ appElement.append(...soundElements);
 // keyboard events:
 window.onkeydown = function (event) {
   if (keyBindings[event.key])
-    // adding the file name to the end of the path string
     audioElement("/assets/sounds/" + keyBindings[event.key]).play();
 };
 
 // handles Click events
 function handleClick(sound) {
-  // adding the file name to the end of the path string
   audioElement("/assets/sounds/" + sound).play();
 }
 function audioElement(source) {
@@ -51,7 +67,24 @@ function audioElement(source) {
 // // returns a new button with given text and given click event handler function:
 function buttonElement(text, clickEvent) {
   const element = document.createElement("button");
+  // add class="card" to button elements
+  element.classList.add(`card`);
+  //adds text / symbol to element button that's declared above
   element.textContent = `♫`;
   element.addEventListener("click", () => clickEvent(text));
   return element;
 }
+
+// Hover effect
+//  link to video tut for this code https://youtu.be/htGfnF1zN4g
+document.getElementById("app").onmousemove = (e) => {
+  // looks at mouse hover position on card
+  for (const card of document.getElementsByClassName("card")) {
+    const rect = card.getBoundingClientRect(),
+      x = e.clientX - rect.left,
+      y = e.clientY - rect.top;
+    // sets the new positions of mouse hover as a value to the hover gradient
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  }
+};
