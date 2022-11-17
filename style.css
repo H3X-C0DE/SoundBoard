@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   display: flex;
   justify-content: center;
@@ -9,7 +13,8 @@ body {
   grid-template-rows: 175px 175px 175px;
   grid-template-columns: 175px 175px 175px;
 }
-.box {
+
+button {
   background-color: #c88df2;
   border: 1px solid #2b2b2b;
   color: #fff;
@@ -17,25 +22,21 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  font-size: 2em;
+  font-size: 4em;
   margin: 5px;
-}
-* {
-  margin: 0;
-  padding: 0;
+  transition: ease-in-out 0.1s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer;
 }
 
-body {
-  background: #2b2b2b;
+button:active {
+  background-color: aquamarine;
+  position: relative;
+  top: 1px;
 }
+
 .soundBoard {
   display: grid;
   grid-template-rows: 175px 175px 175px;
   grid-template-columns: 175px 175px 175px;
-}
-
-button {
-  background-color: #c88df2;
-  border: 2px solid #2b2b2b;
-  border-radius: 5px;
 }

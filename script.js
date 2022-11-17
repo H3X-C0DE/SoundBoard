@@ -1,5 +1,6 @@
-console.log("Hello!");
+// selecting the main content div holding the buttons
 const appElement = document.getElementById("app");
+// array of file names
 const sounds = [
   "brain-fart.mp3",
   "fart-with-extra-reverb.mp3",
@@ -11,6 +12,7 @@ const sounds = [
   "vine-boom.mp3",
   "erro.mp3",
 ];
+// setting the sounds index to a key value
 const keyBindings = {
   q: sounds[0],
   w: sounds[1],
@@ -33,11 +35,13 @@ appElement.append(...soundElements);
 // keyboard events:
 window.onkeydown = function (event) {
   if (keyBindings[event.key])
+    // adding the file name to the end of the path string
     audioElement("/assets/sounds/" + keyBindings[event.key]).play();
 };
 
 // handles Click events
 function handleClick(sound) {
+  // adding the file name to the end of the path string
   audioElement("/assets/sounds/" + sound).play();
 }
 function audioElement(source) {
@@ -47,7 +51,7 @@ function audioElement(source) {
 // // returns a new button with given text and given click event handler function:
 function buttonElement(text, clickEvent) {
   const element = document.createElement("button");
-  element.textContent = text;
+  element.textContent = `♫`;
   element.addEventListener("click", () => clickEvent(text));
   return element;
 }
