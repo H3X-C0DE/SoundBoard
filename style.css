@@ -36,7 +36,7 @@ body {
   width: 175px;
   flex-direction: column;
   position: relative;
-  border: 1px solid #434343;
+  border: 1px solid #242424;
   color: #fff;
   display: flex;
   align-items: center;
@@ -69,7 +69,7 @@ body {
 .card::before {
   background: radial-gradient(
     800px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.06),
+    rgba(0, 247, 255, 0.164),
     transparent 40%
   );
   z-index: 3;
