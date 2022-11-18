@@ -66,23 +66,31 @@ function audioElement(source) {
   return element;
 }
 
-// // returns a new button with given text and given click event handler function:
 function buttonElement(text, clickEvent) {
-  const element = document.createElement("button");
-  // add class="card" to button elements
-  element.classList.add(`card`);
-  //adds text / symbol to element button that's declared above
+  //create Elements
+  const divElement = document.createElement("div");
+  const element = document.createElement("div");
+  //Give the elements a class name
+  divElement.classList.add(`card`);
+  element.classList.add(`card-content`);
+  // add a text content
   element.textContent = `♫`;
-  element.addEventListener("click", () => clickEvent(text));
-  return element;
+  // make the card clickable to trigger audioElement
+  divElement.addEventListener("click", () => clickEvent(text));
+  // append the divs within each other
+  divElement.append(element);
+  appElement.append(divElement);
+
+  return divElement;
 }
 
 // Hover effect
-//  link to video tut for this code https://youtu.be/htGfnF1zN4g
+//  link to video tut for this code https://youtu.be/htGfnF1zN4g - Hyperplexed
 document.getElementById("app").onmousemove = (e) => {
   // looks at mouse hover position on card
   for (const card of document.getElementsByClassName("card")) {
     const rect = card.getBoundingClientRect(),
+      //finds the coordinates of the cursor as it moves across the document
       x = e.clientX - rect.left,
       y = e.clientY - rect.top;
     // sets the new positions of mouse hover as a value to the hover gradient
