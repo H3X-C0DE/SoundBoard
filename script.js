@@ -1,6 +1,5 @@
 // selecting the main content div holding the buttons
 const appElement = document.getElementById("app");
-
 // array of file names
 const sounds = [
   "brain-fart.mp3",
@@ -58,12 +57,15 @@ window.onkeydown = function (event) {
 
 // handles Click events
 function handleClick(sound) {
+  // when clicked run audio function and play it
   audioElement("/assets/sounds/" + sound).play();
 }
+// creates the audioElement
 function audioElement(source) {
   const element = new Audio(source);
   return element;
 }
+
 // // returns a new button with given text and given click event handler function:
 function buttonElement(text, clickEvent) {
   const element = document.createElement("button");
