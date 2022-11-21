@@ -103,12 +103,3 @@ body {
   font-size: 2em;
   top: 3px;
 }
-
-.pressed {
-  background-color: #00ffaa;
-  color: #74ffff;
-  opacity: 1;
-  position: relative;
-  font-size: 2em;
-  top: 3px;
-}
