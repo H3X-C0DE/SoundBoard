@@ -21,6 +21,7 @@ body {
   gap: 8px;
   max-width: 1250px;
   width: calc(100% - 20px);
+  margin: 1.5em 0 auto;
 }
 
 #app:hover > .card::after {
